@@ -17,4 +17,5 @@ así como su nota.
 ```
 Alumno 3: La mejor nota es 9 en BASE DE DATOS
 ```
-Proyecto desarrollado en Java
+
+[^1]Proyecto desarrollado en Java
