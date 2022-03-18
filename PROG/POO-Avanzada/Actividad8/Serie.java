@@ -1,62 +1,60 @@
 package Actividad8;
 
-public class Videojuego {
-
+public class Serie {
 
 	// Constantes
-	protected final static int HORASEST_DEF = 10;
+	protected final static int NUMTEMP_DEF = 3;
 	protected final static boolean ENTREGADO_DEF = false;
-	protected final static String GENERO_DEF = "DEPORTE";
-	protected final static String TITULO_DEF = "Fifa 22";
-	protected final static String COMPAÑIA_DEF = "EA SPORTS";
+	protected final static String GENERO_DEF = "Accion";
+	protected final static String TITULO_DEF = "Spider-Man";
+	protected final static String CREADOR_DEF = "Juan";
 	
 	//Atributos
-	protected String titulo, genero, compañia;
-	protected int horasEst;
+	protected String titulo, genero, creador;
+	protected int numTemporada;
 	protected boolean entregado;
 	
 	// Constructores
-	public Videojuego(String titulo, String genero, String compañia, int horasEst) {
+	public Serie(String titulo, String genero, String creador, int numTemporada) {
 		this.titulo = titulo;
 		this.genero = genero;
-		this.compañia = compañia;
-		this.horasEst = horasEst;
+		this.creador = creador;
+		this.numTemporada = numTemporada;
 		this.entregado = ENTREGADO_DEF;
 	}
 	
-	public Videojuego(String titulo, String compañia) {
-		this(titulo, GENERO_DEF, compañia, HORASEST_DEF);
+	public Serie(String titulo, String creador) {
+		this(titulo, GENERO_DEF, creador, NUMTEMP_DEF);
 		this.entregado = ENTREGADO_DEF;
 	}
 	
-	public Videojuego() {
-		this(TITULO_DEF, GENERO_DEF, COMPAÑIA_DEF, HORASEST_DEF);
+	public Serie() {
+		this(TITULO_DEF, GENERO_DEF, CREADOR_DEF, NUMTEMP_DEF);
 		this.entregado = ENTREGADO_DEF;
 	}
 
 	// Métodos
 	protected void entregar() {
 		this.entregado = true;
-		System.out.println("El videojuego ha sido entregado");
+		System.out.println("La serie ha sido entregada");
 	}
 
 	protected void devolver() {
 		this.entregado = false;
-		System.out.println("El videojuego ha sido devuelto");
+		System.out.println("La serie ha sido devuelta");
 	}
 	
 	protected void isEntregado() {
 		System.err.println("Estamos viendo nuestra base de datos");
 		boolean estadoConsulta = this.entregado;
 		if (estadoConsulta == true) {
-			System.out.println("El videojuego ha sido entregado");
+			System.out.println("La serie ha sido entregada");
 		} else {
-			System.out.println("El videojuego está disponible");
+			System.out.println("La serie no ha sido entregada");
 		}
 	}
 	
 	// Getters y Setters
-
 	public String getTitulo() {
 		return titulo;
 	}
@@ -73,20 +71,20 @@ public class Videojuego {
 		this.genero = genero;
 	}
 
-	public String getCompañia() {
-		return compañia;
+	public String getCreador() {
+		return creador;
 	}
 
-	public void setCompañia(String compañia) {
-		this.compañia = compañia;
+	public void setCreador(String creador) {
+		this.creador = creador;
 	}
 
-	public int getHorasEst() {
-		return horasEst;
+	public int getNumTemporada() {
+		return numTemporada;
 	}
 
-	public void setHorasEst(int horasEst) {
-		this.horasEst = horasEst;
+	public void setNumTemporada(int numTemporada) {
+		this.numTemporada = numTemporada;
 	}
 
 	
@@ -94,9 +92,8 @@ public class Videojuego {
 	
 	@Override
 	public String toString() {
-		return "Videojuego [titulo=" + titulo + ", genero=" + genero + ", compañia=" + compañia + ", horasEst="
-				+ horasEst + ", entregado=" + entregado + "]";
+		return "Serie [titulo=" + titulo + ", genero=" + genero + ", creador=" + creador + ", numTemporada="
+				+ numTemporada + ", entregado=" + entregado + "]";
 	}
-	
 	
 }
