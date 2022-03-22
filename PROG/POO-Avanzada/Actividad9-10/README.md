@@ -1,4 +1,4 @@
-#Actividad 9
+# Actividad 9
 Escribe un programa para una biblioteca que contenga libros y revistas.
 • Las características comunes que se almacenan tanto para las revistas como para los
 libros son el código, el título, y el año de publicación. Estas tres características se
@@ -14,7 +14,7 @@ código.
 • Para prevenir posibles cambios en el programa se tiene que implementar una
 interfaz Prestable con los métodos prestar(), devolver() y prestado(). La clase
 Libro implementa esta interfaz.
-#Actividad 10
+# Actividad 10
 Continúa desarrollando la aplicación del ejercicio anterior incluyendo estos dos métodos:
 • cuentaPrestados: recibe por parámetro un array de objetos, y devuelve cuántos de
 ellos están prestados.
