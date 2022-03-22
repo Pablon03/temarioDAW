@@ -1,4 +1,4 @@
-package Actividad9Estudiando;
+package Actividad9;
 
 public class Revistas extends Publicaciones {
 
@@ -16,5 +16,17 @@ public class Revistas extends Publicaciones {
 	public String toString() {
 		return "Revistas [numero=" + numero + ", toString()=" + super.toString() + "]";
 	}
+
+
+	public int getNumero() {
+		return numero;
+	}
+
+
+	public void setNumero(int numero) {
+		this.numero = numero;
+	}
+	
+	
 
 }
