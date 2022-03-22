@@ -1,4 +1,4 @@
-package Actividad9Estudiando;
+package Actividad9;
 
 public class Libros extends Publicaciones implements Prestable {
 
