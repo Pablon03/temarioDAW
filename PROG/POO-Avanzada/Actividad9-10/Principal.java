@@ -1,9 +1,7 @@
-package Actividad9Estudiando;
-import java.util.*;
+package Actividad9;
 
 public class Principal {
 
-	static Scanner sc = new Scanner(System.in);
 	public static void main(String[] args) {
 		
 		Publicaciones listaPublicaciones[] = new Publicaciones[4];
@@ -46,8 +44,10 @@ public class Principal {
 	public static int cuantosPrestados(Object[] listaPublicaciones) {
 		int prestados = 0;
 		for (int i = 0; i < listaPublicaciones.length; i++) {
-
-			
+			if (listaPublicaciones[i] instanceof Prestable && ((Prestable)listaPublicaciones[i]).prestado()) {
+				prestados ++;
+			}
 		}
+		return prestados;
 	}
 }
