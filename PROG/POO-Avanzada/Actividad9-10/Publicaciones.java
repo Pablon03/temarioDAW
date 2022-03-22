@@ -1,4 +1,4 @@
-package Actividad9Estudiando;
+package Actividad9;
 
 public class Publicaciones {
 
@@ -20,5 +20,19 @@ public class Publicaciones {
 		return "Publicaciones [codigo=" + codigo + ", titulo=" + titulo + ", anioPublicacion=" + anioPublicacion
 				+ "]";
 	}
+
+	public String getCodigo() {
+		return codigo;
+	}
+
+	public String getTitulo() {
+		return titulo;
+	}
+
+	public int getAnioPublicacion() {
+		return anioPublicacion;
+	}
+	
+	
 	
 }
