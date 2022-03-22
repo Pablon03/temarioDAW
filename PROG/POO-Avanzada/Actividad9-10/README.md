@@ -5,7 +5,6 @@ Escribe un programa para una biblioteca que contenga **libros** y **revistas**.
 - Las revistas tienen un **número**. En el momento de crear las revistas se pasa el número por parámetro.
 - Tanto las revistas como los libros deben tener (aparte de los constructores) un método **toString()** que devuelve el valor de todos los atributos en una cadena de caracteres. También tienen un método que devuelve el año de publicación, y otro el código.
 - Para prevenir posibles cambios en el programa se tiene que implementar una interfaz **Prestable** con los métodos **prestar()**, **devolver()** y **prestado()**. La clase Libro implementa esta interfaz.
-- 
 # Actividad 10 
 Continúa desarrollando la aplicación del ejercicio anterior incluyendo estos dos métodos:
 - **cuentaPrestados**: recibe por parámetro un array de objetos, y devuelve cuántos de ellos están prestados.
