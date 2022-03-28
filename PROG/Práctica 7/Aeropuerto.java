@@ -1,5 +1,6 @@
 package Practica7;
 
+
 public class Aeropuerto {
 
 	/*
@@ -12,10 +13,11 @@ public class Aeropuerto {
 	private Compañia[] listaCompañia;
 	private int numeroCompañia;
 
+
 	/*
 	 * Constructores
 	 */
-	public void Auropuerto(String nombre, String ciudad, String pais) {
+	public Aeropuerto(String nombre, String ciudad, String pais) {
 
 		this.nombre = nombre;
 		this.ciudad = ciudad;
@@ -23,7 +25,7 @@ public class Aeropuerto {
 
 	}
 
-	public void Auropuerto(String nombre, String ciudad, String pais, Compañia[] compañia) {
+	public Aeropuerto(String nombre, String ciudad, String pais, Compañia[] compañia) {
 
 		this.nombre = nombre;
 		this.ciudad = ciudad;
@@ -75,5 +77,4 @@ public class Aeropuerto {
 		//Introduce nombre de la compañia y la devuelve
 		return null;
 	}
-
 }
