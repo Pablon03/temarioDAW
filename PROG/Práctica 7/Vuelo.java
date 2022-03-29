@@ -6,7 +6,7 @@ public class Vuelo {
 	private String ciudadOrigen;
 	private String ciudadDestino;
 	private double precio;
-	private int numMaxPasarejos;
+	private int numMaxPasajeros;
 	private int numActualPasajero;
 	private Pasajero[] listaPasajeros;
 
@@ -16,7 +16,7 @@ public class Vuelo {
 		this.ciudadOrigen = ciudadOrigen;
 		this.ciudadDestino = ciudadDestino;
 		this.precio = precio;
-		this.numMaxPasarejos = pasajerosMaximos;
+		this.numMaxPasajeros = pasajerosMaximos;
 	}
 
 
@@ -38,8 +38,8 @@ public class Vuelo {
 		return precio;
 	}
 
-	public int getNumMaxPasarejos() {
-		return numMaxPasarejos;
+	public int getNumMaxPasajeros() {
+		return numMaxPasajeros;
 	}
 
 	public int getNumActualPasajero() {
@@ -56,3 +56,4 @@ public class Vuelo {
 	
 	
 }
+
