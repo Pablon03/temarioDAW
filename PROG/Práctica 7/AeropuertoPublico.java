@@ -1,7 +1,7 @@
-package Practica7;
-
 public class AeropuertoPublico extends Aeropuerto {
 
+	
+	
 	/*
 	 * Atributos
 	 */
@@ -32,4 +32,11 @@ public class AeropuertoPublico extends Aeropuerto {
 	public double getSubvencion() {
 		return subvencion;
 	}
+
+	@Override
+	public String toString() {
+		return "AeropuertoPublico [subvencion=" + subvencion + "]";
+	}
+	
+	
 }
