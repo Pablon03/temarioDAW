@@ -1,8 +1,9 @@
+import java.util.Arrays;
 
 public class AeropuertoPrivado extends Aeropuerto{
 
 	//Atributos
-	private String[] empresas;
+	private String[] empresas = new String[2];
 	private int numEmpresa;
 	
 	//Constructor
@@ -10,9 +11,9 @@ public class AeropuertoPrivado extends Aeropuerto{
 		super(nombre, ciudad, pais);
 	}
 	
-	public AeropuertoPrivado(String nombre, String ciudad, String pais, Compañia[] compañia, String[] empresa) {
+	public AeropuertoPrivado(String nombre, String ciudad, String pais, Compañia[] compañia) {
 		super(nombre, ciudad, pais, compañia);
-		this.empresas = new String[15];
+		this.empresas = new String[2];
 		numEmpresa = 0;
 	}
 	
@@ -24,6 +25,11 @@ public class AeropuertoPrivado extends Aeropuerto{
 	// Getters
 	public String[] getEmpresas() {
 		return empresas;
+	}
+
+	@Override
+	public String toString() {
+		return "AeropuertoPrivado [empresas=" + Arrays.toString(empresas) + "]";
 	}
 	
 	
