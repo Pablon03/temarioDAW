@@ -42,7 +42,7 @@ public class Main {
 
 			mostrarMenu();
 			accion = accionMenu();
-			tratarMenu(accion);
+			tratarMenu(accion, listaAeropuertos);
 
 		} while (accion != 6);
 
@@ -69,11 +69,12 @@ public class Main {
 
 	}
 
-	public static void tratarMenu(int accion) {
+	public static void tratarMenu(int accion, Aeropuerto[] listaAeropuerto) {
 
 		switch (accion) {
 
 		case 1:
+			consultarAeropuertos(listaAeropuerto);
 			break;
 		case 2:
 			break;
@@ -89,10 +90,48 @@ public class Main {
 		}
 
 	}
+	
+	/*
+	 * ConsultarAeropuertos
+	 * 
+	 * Se introduce una array de Aeropuertos
+	 * 
+	 * Se muestran los aeropuetos publicos y privados por separado
+	 */
 
-	public static void consultarAeropuertos() {
+	public static void consultarAeropuertos(Aeropuerto[] listaAeropuertos) {
 
+		System.out.println("Aeropuertos Privados");
+		
+		for(int i=0;i<listaAeropuertos.length;i++) {
+			
+			if(listaAeropuertos[i] instanceof AeropuertoPrivado) {
+				
+				System.out.println(listaAeropuertos[i].toString());
+				
+			}
+			
+		}
+		
+		System.out.println();
+		System.out.println("Aeropuestos Publicos");
+		
+		for(int i=0;i<listaAeropuertos.length;i++) {
+			
+			if(listaAeropuertos[i] instanceof AeropuertoPublico) {
+				
+				System.out.println(listaAeropuertos[i].toString());
+				
+			}
+			
+		}
+		
+	}
+	
+	public static void listaCompañiasAeropuerto(Aeropuerto aeropuerto) {
+		
+		
+		
 	}
 
 }
-
