@@ -9,6 +9,26 @@ public class Main {
 	public static void main(String[] args) {
 
 		/*
+		 * Datos
+		 */
+		Aeropuerto[] listaAeropuertos = new Aeropuerto[6];
+		
+		AeropuertoPrivado apriv1 = new AeropuertoPrivado("AeropuertoPrivado1", "Ciudad1", "Pais1");
+		AeropuertoPrivado apriv2 = new AeropuertoPrivado("AeropuertoPrivado2", "Ciudad2", "Pais2");
+		AeropuertoPrivado apriv3 = new AeropuertoPrivado("AeropuertoPrivado3", "Ciudad3", "Pais3");
+		AeropuertoPublico apub1 = new AeropuertoPublico("AeropuertoPrivado4", "Ciudad4", "Pais4");
+		AeropuertoPublico apub2 = new AeropuertoPublico("AeropuertoPrivado5", "Ciudad5", "Pais5");
+		AeropuertoPublico apub3 = new AeropuertoPublico("AeropuertoPrivado6", "Ciudad6", "Pais6");
+		
+		listaAeropuertos[0]=apriv1;
+		listaAeropuertos[1]=apriv2;
+		listaAeropuertos[2]=apriv3;
+		listaAeropuertos[3]=apub1;
+		listaAeropuertos[4]=apub2;
+		listaAeropuertos[5]=apub3;
+				
+
+		/*
 		 * Variables
 		 */
 
@@ -70,4 +90,9 @@ public class Main {
 
 	}
 
+	public static void consultarAeropuertos() {
+
+	}
+
 }
+
