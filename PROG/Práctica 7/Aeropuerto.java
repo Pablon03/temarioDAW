@@ -1,4 +1,3 @@
-package Practica7;
 
 import java.util.Arrays;
 
@@ -84,12 +83,16 @@ public abstract class Aeropuerto {
 		return "Aeropuerto [listaCompañia=" + Arrays.toString(listaCompañia) + "]";
 	}
 
+	
+	public String mostrarAeropuertos() {
+		return "Aeropuerto" + this.nombre + "[Ciudad donde se sitúa: " + this.ciudad +" , país al que pertenece: " + this.pais + " ]";
+	}
 	/*
 	 * Metodo Abstracto, mostrará la lista compañias
 	 * 
 	 * En cada clase se implementará de una forma
 	 */
 
-	protected abstract String toString2();
+	protected abstract String mostrarNombreyCompañia();
 
 }
