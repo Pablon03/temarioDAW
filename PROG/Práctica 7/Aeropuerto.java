@@ -1,7 +1,8 @@
 package Practica7;
 
+import java.util.Arrays;
 
-public class Aeropuerto {
+public abstract class Aeropuerto {
 
 	/*
 	 * Atributos
@@ -10,9 +11,8 @@ public class Aeropuerto {
 	private String nombre;
 	private String ciudad;
 	private String pais;
-	private Compañia[] listaCompañia;
+	protected Compañia[] listaCompañia = new Compañia[2];
 	private int numeroCompañia;
-
 
 	/*
 	 * Constructores
@@ -22,6 +22,7 @@ public class Aeropuerto {
 		this.nombre = nombre;
 		this.ciudad = ciudad;
 		this.pais = pais;
+		this.numeroCompañia = 0;
 
 	}
 
@@ -32,22 +33,23 @@ public class Aeropuerto {
 		this.pais = pais;
 		this.listaCompañia = compañia;
 
-
 	}
-	
+
 	/*
 	 * Metodos
 	 */
 	public Compañia obtenerCompañias() {
-		//Devulve compañias
+
 		return null;
-		
+
 	}
-	
+
 	public void insertarCompañia(Compañia compañia) {
-		//Inserta compañias
+
+		listaCompañia[numeroCompañia] = compañia;
+		numeroCompañia++;
 	}
-	
+
 	/*
 	 * Getters
 	 */
@@ -67,14 +69,27 @@ public class Aeropuerto {
 	public int getNumeroCompañia() {
 		return numeroCompañia;
 	}
-	
-	public Compañia getCompañia(int numVuelo) {
-		//Introduce numVuelo y devuelve vuelo
-		return null;
+
+	public void setListaCompañia(Compañia[] listaCompañia) {
+		this.listaCompañia = listaCompañia;
 	}
-	
+
 	public Compañia getCompañia(String nombre) {
-		//Introduce nombre de la compañia y la devuelve
+		// Introduce nombre de la compañia y la devuelve
 		return null;
 	}
+
+	@Override
+	public String toString() {
+		return "Aeropuerto [listaCompañia=" + Arrays.toString(listaCompañia) + "]";
+	}
+
+	/*
+	 * Metodo Abstracto, mostrará la lista compañias
+	 * 
+	 * En cada clase se implementará de una forma
+	 */
+
+	protected abstract String toString2();
+
 }
