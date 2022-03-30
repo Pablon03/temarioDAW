@@ -8,14 +8,15 @@ public class Compañia {
 	private int numVuelo;
 	
 	// Constructores
-	public void Compañia(String nombre, Vuelo[] vuelo) {
+	public Compañia(String nombre, Vuelo[] vuelo) {
 		this.nombre = nombre;
-		this.listaVuelo = listaVuelo;
+		this.listaVuelo = vuelo;
 		this.numVuelo = 0;
 	}
 	
-	public void Compañia(String nombre) {
+	public Compañia(String nombre) {
 		this.nombre = nombre;
+		this.listaVuelo = new Vuelo[1];
 		this.numVuelo = 0;
 	}
 	
@@ -36,6 +37,14 @@ public class Compañia {
 	public int getNumVuelo() {
 		return numVuelo;
 	}
+
+	@Override
+	public String toString() {
+		return "Compañia [nombre=" + nombre + "]";
+	}
 	
 	
+	public void mostrarVuelos() {
+		System.out.println(Arrays.toString(listaVuelo));
+	}
 }
