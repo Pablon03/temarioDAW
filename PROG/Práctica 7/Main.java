@@ -85,9 +85,11 @@ public class Main {
 			break;
 			
 		case 3:
+			listaCompañiasAeropuerto(listaAeropuertos);
 			break;
 			
 		case 4:
+			
 			break;
 			
 		case 5:
@@ -112,14 +114,14 @@ public class Main {
 		System.out.println("Aeropuertos Privados");
 		for(int i=0;i<listaAeropuertos.length;i++) {
 			if(listaAeropuertos[i] instanceof AeropuertoPrivado) {
-				System.out.println(listaAeropuertos[i].toString());
+				System.out.println(listaAeropuertos[i].mostrarAeropuertos());
 			}	
 		}
 		System.out.println();
 		System.out.println("Aeropuestos Publicos");
 		for(int i=0;i<listaAeropuertos.length;i++) {
 			if(listaAeropuertos[i] instanceof AeropuertoPublico) {
-				System.out.println(listaAeropuertos[i].toString());
+				System.out.println(listaAeropuertos[i].mostrarAeropuertos());
 			}
 		}
 	}
@@ -129,16 +131,37 @@ public class Main {
 		System.out.println("//Aeropuertos Privados//");
 		for (int i = 0; i < listaAeropuertos.length; i++) {
 			if (listaAeropuertos[i] instanceof AeropuertoPrivado) {
-				System.out.println(((AeropuertoPrivado) listaAeropuertos[i]).toString());
+				System.out.println(((AeropuertoPrivado) listaAeropuertos[i]).mostrarEmpresas());
 			}
 		}
 		System.out.println("");
 		System.out.println("//Aeropuertos Públicos//");
 		for (int i = 0; i < listaAeropuertos.length; i++) {
 			if (listaAeropuertos[i] instanceof AeropuertoPublico) {
-				System.out.println(((AeropuertoPublico) listaAeropuertos[i]).toString());
+				((AeropuertoPublico) listaAeropuertos[i]).mostrarSubvencion();
 			}
 		}
 	}
+	
+	public static void listaCompañiasAeropuerto(Aeropuerto[] listaAeropuertos) {
+
+		int numAeropuerto;
+
+		do {
+
+			System.out.println("¿De que aeropuerto desea mirar la compañia?");
+			System.out.println("1.-Aeropuerto Privado1" + "\n2.-Aeropuerto Privado2" + "\n3.-Aeropuerto Privado3"
+					+ "\n4.-Aeropuerto Publico1" + "\n5.-Aeropuerto Publico2" + "\n6.-Aeropuerto Publico3");
+
+			System.out.println("Introduzca el numero:");
+			numAeropuerto = entrada.nextInt();
+
+		} while (numAeropuerto < 1 && numAeropuerto > 6);
+
+		System.out.println(listaAeropuertos[numAeropuerto - 1].mostrarNombreyCompañia());
+
+	}
+	
+	
 
 }
