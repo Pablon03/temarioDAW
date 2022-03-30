@@ -1,5 +1,3 @@
-package Practica7;
-
 import java.util.Arrays;
 
 public class AeropuertoPublico extends Aeropuerto {
@@ -39,7 +37,13 @@ public class AeropuertoPublico extends Aeropuerto {
 	 * Mostrar lista de compañias
 	 */
 	
-	public String toString2() {
+	public String mostrarNombreyCompañia() {
 		return "AeropuertoPublico " + Arrays.toString(listaCompañia) + "]";
 	}
+	
+	public void mostrarSubvencion() {
+		System.out.println("Este aeropuerto tiene una subvención de " + subvencion + "€");
+	}
+	
+	
 }
