@@ -11,7 +11,7 @@ public class Vuelo {
 	private Pasajero[] listaPasajeros;
 
 	// Constructos
-	public void vuelo(String id, String ciudadOrigen, String ciudadDestino, double precio, int pasajerosMaximos) {
+	public Vuelo(String id, String ciudadOrigen, String ciudadDestino, double precio, int pasajerosMaximos) {
 		this.identificador = id;
 		this.ciudadOrigen = ciudadOrigen;
 		this.ciudadDestino = ciudadDestino;
@@ -52,8 +52,14 @@ public class Vuelo {
 		
 		return listaPasajeros;
 	}
+
+
+	@Override
+	public String toString() {
+		return "Vuelo [identificador=" + identificador + ", ciudadOrigen=" + ciudadOrigen + ", ciudadDestino="
+				+ ciudadDestino + ", precio=" + precio + ", numMaxPasajeros=" + numMaxPasajeros + "]";
+	}
 	
 	
 	
 }
-
