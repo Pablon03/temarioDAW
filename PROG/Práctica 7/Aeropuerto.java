@@ -10,7 +10,7 @@ public abstract class Aeropuerto {
 	private String nombre;
 	private String ciudad;
 	private String pais;
-	protected Compañia[] listaCompañia = new Compañia[2];
+	protected Compañia[] listaCompañia;
 	private int numeroCompañia;
 
 	/*
@@ -21,6 +21,7 @@ public abstract class Aeropuerto {
 		this.nombre = nombre;
 		this.ciudad = ciudad;
 		this.pais = pais;
+		this.listaCompañia = new Compañia[2];
 		this.numeroCompañia = 0;
 
 	}
@@ -31,17 +32,14 @@ public abstract class Aeropuerto {
 		this.ciudad = ciudad;
 		this.pais = pais;
 		this.listaCompañia = compañia;
+		this.listaCompañia = new Compañia[2];
 
 	}
 
 	/*
 	 * Metodos
 	 */
-	public Compañia obtenerCompañias() {
 
-		return null;
-
-	}
 
 	public void insertarCompañia(Compañia compañia) {
 
@@ -78,10 +76,6 @@ public abstract class Aeropuerto {
 		return null;
 	}
 
-	@Override
-	public String toString() {
-		return "Aeropuerto [listaCompañia=" + Arrays.toString(listaCompañia) + "]";
-	}
 
 	
 	public String mostrarAeropuertos() {
@@ -93,6 +87,6 @@ public abstract class Aeropuerto {
 	 * En cada clase se implementará de una forma
 	 */
 
-	protected abstract String mostrarNombreyCompañia();
+	protected abstract void mostrarNombreyCompañia();
 
 }
