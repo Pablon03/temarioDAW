@@ -1,7 +1,9 @@
+package Practica7;
+
+import java.util.Arrays;
+
 public class AeropuertoPublico extends Aeropuerto {
 
-	
-	
 	/*
 	 * Atributos
 	 */
@@ -32,11 +34,12 @@ public class AeropuertoPublico extends Aeropuerto {
 	public double getSubvencion() {
 		return subvencion;
 	}
-
-	@Override
-	public String toString() {
-		return "AeropuertoPublico [subvencion=" + subvencion + "]";
+	
+	/*
+	 * Mostrar lista de compañias
+	 */
+	
+	public String toString2() {
+		return "AeropuertoPublico " + Arrays.toString(listaCompañia) + "]";
 	}
-	
-	
 }
