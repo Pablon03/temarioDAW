@@ -31,12 +31,51 @@ public class Main {
 		apriv3.insertarEmpresa("Medion");
 		apriv3.insertarEmpresa("Xiaomi");
 
+		/*Creación de compañías y asociación de vuelos*/
+		Compañia[] listaCompañias = new Compañia[6];
+
+		Compañia com1 = new Compañia("Compañia1");
+		Compañia com2 = new Compañia("Compañia2");
+		Compañia com3 = new Compañia("Compañia3");
+		Compañia com4 = new Compañia("Compañia4");
+		Compañia com5 = new Compañia("Compañia5");
+		Compañia com6 = new Compañia("Compañia6");
+
+		listaCompañias[0] = com1;
+		listaCompañias[1] = com2;
+		listaCompañias[2] = com3;
+		listaCompañias[3] = com4;
+		listaCompañias[4] = com5;
+		listaCompañias[5] = com6;
+		
+		apriv1.insertarCompañia(com1);
+		apriv2.insertarCompañia(com2);
+		apriv3.insertarCompañia(com3);
+		apub1.insertarCompañia(com4);
+		apub2.insertarCompañia(com5);
+		apub3.insertarCompañia(com6);
+		
+		/*Creamos vuelos y los insertamos en las compañias*/
+		Vuelo v1 = new Vuelo("1", "Ciudad1", "Ciudad2", 100.0, 1000);
+		Vuelo v2 = new Vuelo("2", "Ciudad3", "Ciudad4", 100.0, 1000);
+		Vuelo v3 = new Vuelo("3", "Ciudad5", "Ciudad9", 100.0, 1000);
+		Vuelo v4 = new Vuelo("3", "Ciudad6", "Ciudad10", 100.0, 1000);
+		Vuelo v5 = new Vuelo("3", "Ciudad7", "Ciudad11", 100.0, 1000);
+		Vuelo v6 = new Vuelo("3", "Ciudad8", "Ciudad12", 100.0, 1000);
+
+		com1.insertarVuelo(v1);
+		com2.insertarVuelo(v2);
+		com3.insertarVuelo(v3);
+		com4.insertarVuelo(v4);
+		com5.insertarVuelo(v5);
+		com6.insertarVuelo(v6);
+		
 		/*
 		 * Variables
 		 */
 
 		int accion;
-
+		
 		/*
 		 * Menu
 		 */
@@ -45,7 +84,7 @@ public class Main {
 
 			mostrarMenu();
 			accion = accionMenu();
-			tratarMenu(accion, listaAeropuertos);
+			tratarMenu(accion, listaAeropuertos, listaCompañias);
 
 		} while (accion != 6);
 
@@ -72,7 +111,7 @@ public class Main {
 
 	}
 
-	public static void tratarMenu(int accion, Aeropuerto[] listaAeropuertos) {
+	public static void tratarMenu(int accion, Aeropuerto[] listaAeropuertos, Compañia[] listaCompañias) {
 
 		switch (accion) {
 
@@ -89,7 +128,7 @@ public class Main {
 			break;
 			
 		case 4:
-			
+			vuelosCompañiasAeropuerto(listaAeropuertos, listaCompañias);
 			break;
 			
 		case 5:
@@ -158,10 +197,36 @@ public class Main {
 
 		} while (numAeropuerto < 1 && numAeropuerto > 6);
 
-		System.out.println(listaAeropuertos[numAeropuerto - 1].mostrarNombreyCompañia());
+		listaAeropuertos[numAeropuerto - 1].mostrarNombreyCompañia();
 
 	}
 	
 	
+	public static void vuelosCompañiasAeropuerto(Aeropuerto[] listaAeropuertos, Compañia[] listaCompañias) {
+
+		int numAeropuerto;
+		int numCompañia;
+
+		do {
+
+			System.out.println("¿De que aeropuerto desea mirar la compañia?");
+			System.out.println("1.-Aeropuerto Privado1" + "\n2.-Aeropuerto Privado2" + "\n3.-Aeropuerto Privado3"
+					+ "\n4.-Aeropuerto Publico1" + "\n5.-Aeropuerto Publico2" + "\n6.-Aeropuerto Publico3");
+
+			System.out.println("Introduzca el numero:");
+			numAeropuerto = entrada.nextInt();
+
+		} while (numAeropuerto < 1 && numAeropuerto > 6);
+
+		listaAeropuertos[numAeropuerto - 1].mostrarNombreyCompañia();
+
+		System.out.println();
+		System.out.println("Introduce el numero de compañia que quiere ver los vuelos:");
+		numCompañia = entrada.nextInt();
+		
+		listaCompañias[numCompañia-1].mostrarVuelos();
+		
+
+	}
 
 }
