@@ -37,8 +37,8 @@ public class AeropuertoPublico extends Aeropuerto {
 	 * Mostrar lista de compañias
 	 */
 	
-	public String mostrarNombreyCompañia() {
-		return "AeropuertoPublico " + Arrays.toString(listaCompañia) + "]";
+	public void mostrarNombreyCompañia() {
+		System.out.println("AeropuertoPrivado " + Arrays.toString(listaCompañia) + "]");
 	}
 	
 	public void mostrarSubvencion() {
