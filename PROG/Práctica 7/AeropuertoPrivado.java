@@ -3,12 +3,13 @@ import java.util.Arrays;
 public class AeropuertoPrivado extends Aeropuerto {
 
 	// Atributos
-	private String[] empresas = new String[2];
+	private String[] empresas;
 	private int numEmpresa;
 
 	// Constructor
 	public AeropuertoPrivado(String nombre, String ciudad, String pais) {
 		super(nombre, ciudad, pais);
+		this.empresas = new String[2];
 	}
 
 	public AeropuertoPrivado(String nombre, String ciudad, String pais, Compañia[] compañia) {
@@ -39,8 +40,8 @@ public class AeropuertoPrivado extends Aeropuerto {
 	 * Mostrar lista de compañias
 	 */
 
-	public String mostrarNombreyCompañia() {
-		return "AeropuertoPrivado " + Arrays.toString(listaCompañia) + "]";
+	public void mostrarNombreyCompañia() {
+		System.out.println("AeropuertoPrivado " + Arrays.toString(listaCompañia) + "]");
 	}
 
 
