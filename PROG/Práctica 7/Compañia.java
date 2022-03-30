@@ -1,5 +1,3 @@
-package Practica7;
-
 import java.util.Arrays;
 
 public class Compañia {
@@ -10,13 +8,13 @@ public class Compañia {
 	private int numVuelo;
 	
 	// Constructores
-	public Compañia(String nombre, Vuelo[] vuelo) {
+	public void Compañia(String nombre, Vuelo[] vuelo) {
 		this.nombre = nombre;
 		this.listaVuelo = listaVuelo;
 		this.numVuelo = 0;
 	}
 	
-	public Compañia(String nombre) {
+	public void Compañia(String nombre) {
 		this.nombre = nombre;
 		this.numVuelo = 0;
 	}
