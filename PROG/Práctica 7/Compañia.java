@@ -9,12 +9,6 @@ public class Compañia {
 	private Vuelo[] listaVuelo;
 	private int numVuelo;
 	
-	// Constructores
-//	public Compañia(String nombre, Vuelo[] vuelo) {
-//		this.nombre = nombre;
-//		this.listaVuelo = vuelo;
-//		this.numVuelo = 0;
-//	}
 	
 	public Compañia(String nombre) {
 		this.nombre = nombre;
@@ -62,4 +56,5 @@ public class Compañia {
 		System.out.println(Arrays.toString(listaVuelo));
 	}
 }
+
 
