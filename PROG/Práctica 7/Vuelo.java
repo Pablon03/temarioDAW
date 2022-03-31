@@ -1,4 +1,6 @@
 
+package Practica7;
+
 public class Vuelo {
 
 	// Atributos
