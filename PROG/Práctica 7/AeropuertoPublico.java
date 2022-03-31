@@ -18,10 +18,6 @@ public class AeropuertoPublico extends Aeropuerto {
 		this.subvencion = subvencion;
 	}
 
-//	public AeropuertoPublico(String nombre, String ciudad, String pais, Compañia[] compañia, double subvencion) {
-//		super(nombre, ciudad, pais, compañia);
-//		this.subvencion = subvencion;
-//	}
 
 //	Getters
 
@@ -50,4 +46,5 @@ public class AeropuertoPublico extends Aeropuerto {
 	}
 
 }
+
 
