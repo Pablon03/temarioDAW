@@ -1,4 +1,7 @@
 
+package Practica7;
+
+
 public class Pasajero {
 
 	// Atributos
@@ -30,3 +33,4 @@ public class Pasajero {
 	
 	
 }
+
