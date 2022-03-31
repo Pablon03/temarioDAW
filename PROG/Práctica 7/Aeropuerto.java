@@ -1,45 +1,47 @@
 
+package Practica7;
+
 import java.util.Arrays;
 
 public abstract class Aeropuerto {
 
-	/*
-	 * Atributos
-	 */
+//	Atributos
 
-	private String nombre;
+	protected String nombre;
 	private String ciudad;
 	private String pais;
 	protected Compañia[] listaCompañia;
 	private int numeroCompañia;
 
-	/*
-	 * Constructores
-	 */
+//	Constructor
 	public Aeropuerto(String nombre, String ciudad, String pais) {
 
 		this.nombre = nombre;
 		this.ciudad = ciudad;
 		this.pais = pais;
-		this.listaCompañia = new Compañia[2];
+		this.listaCompañia = new Compañia[1];
 		this.numeroCompañia = 0;
 
 	}
 
-	public Aeropuerto(String nombre, String ciudad, String pais, Compañia[] compañia) {
+//	public Aeropuerto(String nombre, String ciudad, String pais, Compañia[] compañia) {
+//
+//		this.nombre = nombre;
+//		this.ciudad = ciudad;
+//		this.pais = pais;
+//		this.listaCompañia = compañia;
+//		this.listaCompañia = new Compañia[1];
+//
+//	}
 
-		this.nombre = nombre;
-		this.ciudad = ciudad;
-		this.pais = pais;
-		this.listaCompañia = compañia;
-		this.listaCompañia = new Compañia[2];
-
-	}
 
 	/*
-	 * Metodos
+	 * insertarCompañia
+	 * 
+	 * Se le pasa por parametros una compañia
+	 * 
+	 * Añade una compañia a la array de compañia 
 	 */
-
 
 	public void insertarCompañia(Compañia compañia) {
 
@@ -47,9 +49,7 @@ public abstract class Aeropuerto {
 		numeroCompañia++;
 	}
 
-	/*
-	 * Getters
-	 */
+//	Getters
 
 	public String getNombre() {
 		return nombre;
@@ -76,11 +76,16 @@ public abstract class Aeropuerto {
 		return null;
 	}
 
-
+	/*
+	 * mostrarAeropuertos
+	 * 
+	 * Mostrará el nombre, la ciudad y el pais al que pertenece el aeropuerto
+	 */
 	
 	public String mostrarAeropuertos() {
-		return "Aeropuerto" + this.nombre + "[Ciudad donde se sitúa: " + this.ciudad +" , país al que pertenece: " + this.pais + " ]";
+		return this.nombre + "[Ciudad donde se sitúa: " + this.ciudad +" , país al que pertenece: " + this.pais + " ]";
 	}
+	
 	/*
 	 * Metodo Abstracto, mostrará la lista compañias
 	 * 
