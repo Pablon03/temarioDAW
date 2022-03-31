@@ -54,6 +54,17 @@ public class Vuelo {
 		
 		return listaPasajeros;
 	}
+	
+	/*
+	 * mostrarIdentificadorPrecio
+	 * 
+	 * Muestra el identificador del vuelo y el precio
+	 */
+	
+	public void mostrarIdentificadorPrecio() {
+		System.out.println();
+		System.out.println("El vuelo tiene identidicador: " + this.identificador + ". Precio: " + this.precio);
+	}
 
 
 	@Override
