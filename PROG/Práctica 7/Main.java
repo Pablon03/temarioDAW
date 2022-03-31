@@ -5,6 +5,10 @@ import java.util.*;
 public class Main {
 
 	static Scanner entrada = new Scanner(System.in);
+	
+	/*
+	 * @Author Álvaro y Pablo
+	 */
 
 	public static void main(String[] args) {
 
@@ -59,6 +63,9 @@ public class Main {
 		apub3.insertarCompañia(com6);
 
 		/* Creamos vuelos y los insertamos en las compañias */
+
+		Vuelo[] listaVuelos = new Vuelo[6];
+
 		Vuelo v1 = new Vuelo("1", "Ciudad1", "Ciudad2", 100.0, 1000);
 		Vuelo v2 = new Vuelo("2", "Ciudad3", "Ciudad4", 100.0, 1000);
 		Vuelo v3 = new Vuelo("3", "Ciudad5", "Ciudad9", 100.0, 1000);
@@ -73,6 +80,13 @@ public class Main {
 		com5.insertarVuelo(v5);
 		com6.insertarVuelo(v6);
 
+		listaVuelos[0] = v1;
+		listaVuelos[1] = v2;
+		listaVuelos[2] = v3;
+		listaVuelos[3] = v4;
+		listaVuelos[4] = v5;
+		listaVuelos[5] = v6;
+
 //		Variables
 
 		int accion;
@@ -83,7 +97,7 @@ public class Main {
 
 			mostrarMenu();
 			accion = accionMenu();
-			tratarMenu(accion, listaAeropuertos, listaCompañias);
+			tratarMenu(accion, listaAeropuertos, listaCompañias, listaVuelos);
 
 		} while (accion != 6);
 
@@ -113,7 +127,7 @@ public class Main {
 
 	}
 
-	public static void tratarMenu(int accion, Aeropuerto[] listaAeropuertos, Compañia[] listaCompañias) {
+	public static void tratarMenu(int accion, Aeropuerto[] listaAeropuertos, Compañia[] listaCompañias, Vuelo[] listaVuelos) {
 
 		switch (accion) {
 
@@ -134,6 +148,7 @@ public class Main {
 			break;
 
 		case 5:
+			mostrarVuelosCiudad(listaVuelos);
 			break;
 
 		case 6:
@@ -256,5 +271,48 @@ public class Main {
 
 	}
 
+	/*
+	 * mostrarVuelosCiudad
+	 * 
+	 * Recibe por parametros una array de vuelos
+	 * 
+	 * Muestra el vuelo que de las ciudades introducidas y su precio
+	 */
+	
+	public static void mostrarVuelosCiudad(Vuelo[] listaVuelos) {
+
+		String ciudadPartida;
+		String ciudadLlegada;
+		boolean salida = false;
+		boolean llegada = false;
+		int indice;
+
+		System.out.println("Introduce el nombre de la ciudad de partida:");
+		ciudadPartida = entrada.next();
+
+		System.out.println("Introduce el nombre del ciudad de llegada:");
+		ciudadLlegada = entrada.next();
+
+		for (int i = 0; i < listaVuelos.length; i++) {
+
+			salida = false;
+			llegada = false;
+
+			if (listaVuelos[i].getCiudadOrigen().equals(ciudadPartida)) {
+				salida = true;
+			}
+
+			if (listaVuelos[i].getCiudadDestino().equals(ciudadLlegada)) {
+				llegada = true;
+			}
+			if (salida && llegada) {
+				listaVuelos[i].mostrarIdentificadorPrecio();
+			}
+
+		}
+
+	}
+
 }
+
 
