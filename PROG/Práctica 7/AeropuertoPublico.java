@@ -1,15 +1,13 @@
+package Practica7;
+
 import java.util.Arrays;
 
 public class AeropuertoPublico extends Aeropuerto {
 
-	/*
-	 * Atributos
-	 */
+//	Atributos
 	private double subvencion;
 
-	/*
-	 * Constructores
-	 */
+//	Constructores
 	public AeropuertoPublico(String nombre, String ciudad, String pais) {
 		super(nombre, ciudad, pais);
 
@@ -20,30 +18,36 @@ public class AeropuertoPublico extends Aeropuerto {
 		this.subvencion = subvencion;
 	}
 
-	public AeropuertoPublico(String nombre, String ciudad, String pais, Compañia[] compañia, double subvencion) {
-		super(nombre, ciudad, pais, compañia);
-		this.subvencion = subvencion;
-	}
+//	public AeropuertoPublico(String nombre, String ciudad, String pais, Compañia[] compañia, double subvencion) {
+//		super(nombre, ciudad, pais, compañia);
+//		this.subvencion = subvencion;
+//	}
 
-	/*
-	 * getters
-	 */
+//	Getters
 
 	public double getSubvencion() {
 		return subvencion;
 	}
-	
+
 	/*
 	 * Mostrar lista de compañias
+	 * 
+	 * Muestra el nombre y la lista de compañias del aeropuerto
 	 */
-	
+
 	public void mostrarNombreyCompañia() {
-		System.out.println("AeropuertoPrivado " + Arrays.toString(listaCompañia) + "]");
+		System.out.println(this.nombre + ": " + Arrays.toString(listaCompañia) + "]");
 	}
 	
+	/*
+	 * mostrarSubvencion
+	 * 
+	 * Muestra el nombre y la subvencion del aeropuerto
+	 */
+
 	public void mostrarSubvencion() {
-		System.out.println("Este aeropuerto tiene una subvención de " + subvencion + "€");
+		System.out.println(this.nombre + ": Tiene una subvención de " + subvencion + "€");
 	}
-	
-	
+
 }
+
