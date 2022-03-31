@@ -24,23 +24,12 @@ public abstract class Aeropuerto {
 
 	}
 
-//	public Aeropuerto(String nombre, String ciudad, String pais, Compañia[] compañia) {
-//
-//		this.nombre = nombre;
-//		this.ciudad = ciudad;
-//		this.pais = pais;
-//		this.listaCompañia = compañia;
-//		this.listaCompañia = new Compañia[1];
-//
-//	}
-
-
 	/*
 	 * insertarCompañia
 	 * 
 	 * Se le pasa por parametros una compañia
 	 * 
-	 * Añade una compañia a la array de compañia 
+	 * Añade una compañia a la array de compañia
 	 */
 
 	public void insertarCompañia(Compañia compañia) {
@@ -81,11 +70,11 @@ public abstract class Aeropuerto {
 	 * 
 	 * Mostrará el nombre, la ciudad y el pais al que pertenece el aeropuerto
 	 */
-	
+
 	public String mostrarAeropuertos() {
-		return this.nombre + "[Ciudad donde se sitúa: " + this.ciudad +" , país al que pertenece: " + this.pais + " ]";
+		return this.nombre + "[Ciudad donde se sitúa: " + this.ciudad + " , país al que pertenece: " + this.pais + " ]";
 	}
-	
+
 	/*
 	 * Metodo Abstracto, mostrará la lista compañias
 	 * 
