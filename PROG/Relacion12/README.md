@@ -1,4 +1,4 @@
-# 1.- Ejercicio 6
+# 6.- Ejercicio 6
 Se dispone de un fichero de texto con los nombres de los alumnos de una clase. Cada línea contiene en
 mayúscula el nombre y los dos apellidos de los alumnos, así como su curso separado por un espacio. Se desea
 montar una estructura de directorios de forma que se cree una carpeta por cada curso y dentro de ella una
