@@ -1,60 +1,87 @@
 package Actividad6;
+
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
-import java.util.*;
+import java.io.PrintWriter;
 
 public class Principal {
 
-	static Scanner sc = new Scanner(System.in);
-	private static final String PATRON = "([A-Z]{2}.* |[A-Z]{2}.* [A-Z]{2}.*)[A-Z]{2}.* [A-Z]{2}.* [1-2][A-Z]{3}";
+	static final String PATRON = "[A-Z]{2}.* [A-Z]{2}.* [A-Z]{2}.* [12][A-Z]{3}";
 	public static void main(String[] args) {
 		
-		System.out.println("Indica el nombre de un archivo (Sin extensión)");
-		String nombre = sc.nextLine();
-		
-		crearCarpetas(nombre);
-	}
-	
-	private static void crearCarpetas(String nombre) {
-		
-		try(FileReader fr = new FileReader(nombre+".txt");
-				BufferedReader br = new BufferedReader(fr)){
+		try(	FileReader fl = new FileReader("EjemploFicheroEjercicio6.txt");
+				BufferedReader br = new BufferedReader(fl);){
 			
-			String linea;
-			linea = br.readLine();
-			String[] arrayLineas;
+			/*Leemos la linea*/
+			String linea = br.readLine();
 			
 			while(linea != null) {
+				
+				/*Si entra el patrón es correcto*/
 				if (linea.matches(PATRON)) {
-					System.out.println(linea + " : Coincide con el patrón");
 					
-					/*Creamos carpeta del curso*/
-					arrayLineas = linea.split(" ");
-					File comprobamosCurso = new File(arrayLineas[arrayLineas.length-1]);
+					/*Dividimos la linea en un array*/
+					String[] arrayLinea = linea.split(" ");
 					
-					if (!comprobamosCurso.exists()) {
-						comprobamosCurso.mkdir();
-						File fichero = new File(arrayLineas[arrayLineas.length-1]+"\\"+arrayLineas[arrayLineas.length-1]+".txt");
-						fichero.createNewFile();
-					}
+					/*Cogemos los datos*/
+					String nombre = arrayLinea[0];
+					String primerApellido = arrayLinea[1];
+					String segundoApellido = arrayLinea[2];
+					String curso = arrayLinea[3];
 					
-					/*Creamos carpetas de los alumnos*/
-					String nombreCarpetaAlumno = arrayLineas[1]+arrayLineas[2]+arrayLineas[0];
-					File comprobamosNombreAlumno = new File(arrayLineas[arrayLineas.length-1]+"\\"+nombreCarpetaAlumno);
-					if (!comprobamosNombreAlumno.exists()) {
-						comprobamosNombreAlumno.mkdir();
+					File f1 = new File(curso);
+					
+					/*Creamos la carpeta curs y la carpeta alumno*/
+					if (!f1.exists()) {
+						f1.mkdir();
 						
+						File carpetaAlumno = new File(f1 + "/" + primerApellido+segundoApellido+nombre);
+						carpetaAlumno.mkdir();
+						
+						File txtCurso = new File(f1 + "/" +curso + ".txt");
+						escribirTXT(txtCurso, nombre);
+						
+					} else {
+						/*Si el curso ya existe solo crea la carpeta alumno*/
+						File carpetaAlumno = new File(curso + "/" + primerApellido+segundoApellido+nombre);
+						
+						if (!carpetaAlumno.exists()) {
+							carpetaAlumno.mkdir();
+							
+							File txtCurso = new File(f1 + "/" + curso + ".txt");
+							escribirTXT(txtCurso, nombre);
+						}
 					}
-					
-				} else {
-					System.out.println(linea + " : No coincide con el patrón");
 				}
+				
+				/*Leemos la siguiente linea*/
 				linea = br.readLine();
 			}
+			
+			
+		} catch (FileNotFoundException e) {
+			System.out.println("No se ha encontrado el archivo");
 		} catch (IOException e) {
-			System.out.println(e.getMessage());
+			System.out.println("Error");
 		}
 	}
+	private static void escribirTXT(File txtCurso, String nombre) {
+		
+		try(	FileWriter fw = new FileWriter(txtCurso, true);
+				PrintWriter pw = new PrintWriter(fw)
+				){
+			
+			
+			pw.write(nombre + "\n");
+			
+		} catch (IOException e) {
+			System.out.println("Error");
+		}
+		
+	}
+
 }
